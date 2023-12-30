@@ -6,10 +6,10 @@ jobs:
   node_installation:
     runs-on: ubuntu_latest
     steps:
-      -uses: actions/checkout@v4
-      -uses: actions/setup-node@v3
-       with:
-          node-version: '14'
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v3
+          with:
+            node-version: '14'
       -run: npm install -g bats
       -run: bats -v
 
