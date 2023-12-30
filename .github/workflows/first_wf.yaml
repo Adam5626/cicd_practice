@@ -9,8 +9,8 @@ jobs:
         uses: actions/checkout@v4
       - name: "Installing Node JS"
         uses: actions:setup-node@v3
-          with:
-            node-version: '14'
+        with:
+          node-version: '14'
       - name: "Installing bats"
         uses: npm install -g bats
       - name: "Checking Bats Version"
