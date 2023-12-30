@@ -12,6 +12,6 @@ jobs:
         with:
           node-version: '14'
       - name: "Installing bats"
-        uses: npm install -g bats
+        run: npm install -g bats
       - name: "Checking Bats Version"
-        uses: bats -v
+        run: bats -v
