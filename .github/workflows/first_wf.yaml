@@ -1,14 +1,17 @@
-name: learn-github-actions
-run-name: ${{ github.actor }} is learning GitHub Actions
+name: CICD Practice
+run-name: ${{github.actor}} is learning Github Actions
 on: [push]
 jobs:
-  check-bats-version:
+  node_installation:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '14'
-      - run: npm install -g bats
-      - run: bats -v
-
+      - name: "Checking out Current Repository"
+        uses: actions/checkout@v4
+      - name: "Installing Node JS"
+        uses: actions:setup-node@v3
+          with:
+            node-version: '14'
+      - name: "Installing bats"
+        uses: npm install -g bats
+      - name: "Checking Bats Version"
+        uses: bats -v
