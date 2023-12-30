@@ -1,0 +1,29 @@
+name: Create Node Version Artifact
+run-name: ${{github.actor}} 9s creating a file that contains node version
+on: [push]
+
+jobs:
+  node_installation:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checking out current repository
+        uses: actions/checkout@v4
+      - name: Installing Nodejs
+        uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+      - name: Storing Node Version
+        run: node -v > node_version.txt
+      - name: Making Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: node_version
+          path: ./node_version.txt
+  
+  download_artifact:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Downloading Artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: node_version
