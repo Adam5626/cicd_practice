@@ -1,0 +1,16 @@
+name: Worflow for proxy
+run-name: Printing node version
+on: [push]
+
+jobs:
+  node_installation:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout current repository
+        uses: actions/checkout@v4
+      - name: Installing Node js
+        uses: actions/setup-node@v3
+        with:
+          node-versions: '14'
+      - name: Printing node js version
+        run: node -v
