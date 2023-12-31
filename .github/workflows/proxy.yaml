@@ -5,6 +5,8 @@ on: [push]
 jobs:
   node_installation:
     runs-on: ubuntu-latest
+    env:
+      name: ${{'Adam'}}
     steps:
       - name: Checkout current repository
         uses: actions/checkout@v4
@@ -15,5 +17,5 @@ jobs:
       - name: Printing node js version
         run: node -v
       - name: Checking success
-        if: ${{failure()}}
-        run: echo all_steps_passed
+        if: ${{!failure()}}
+        run: echo all_steps_passed_by_${{env.name}}
