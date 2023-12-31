@@ -16,4 +16,4 @@ jobs:
         run: node -v
       - name: Checking success
         if: ${{!failure()}}
-          run: echo all_steps_passed
+        run: echo all_steps_passed
