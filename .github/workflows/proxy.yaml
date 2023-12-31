@@ -14,3 +14,6 @@ jobs:
           node-versions: '14'
       - name: Printing node js version
         run: node -v
+      - name: Checking success
+        if: ${{!failure()}}
+          run: echo all_steps_passed
