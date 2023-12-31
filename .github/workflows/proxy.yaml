@@ -15,5 +15,5 @@ jobs:
       - name: Printing node js version
         run: node -v
       - name: Checking success
-        if: ${{!failure()}}
+        if: ${{failure()}}
         run: echo all_steps_passed
