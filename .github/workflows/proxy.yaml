@@ -1,6 +1,10 @@
 name: Worflow for proxy
 run-name: Printing node version
-on: [push]
+on:
+    workflow_dispatch:
+      push:
+        branches:
+          -main
 
 jobs:
   node_installation:
